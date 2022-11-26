@@ -6,7 +6,7 @@ const createIntern=async function(req,res){
 try{
     let data=req.body
     let {collegeName}=data
-
+    
         let collegedetail= await collegeModel.findOne({name:collegeName},{isDeleted:false})
         if(!collegedetail) return res.status(404).send({status:false, message:"Not found"})
         
